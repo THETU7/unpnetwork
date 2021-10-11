@@ -1,1 +1,15 @@
-# UNIX NETWORK 实现
+# UNIX NETWORK PROGRAMMING
+
+### build
+
+```shell
+mkdir build;cd build
+cmake ..
+make
+```
+
+### install
+
+```shell
+make install
+```
