@@ -8,6 +8,7 @@
 */
 #ifndef HELP_H
 #define HELP_H
+#include <sys/select.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <stdlib.h>
@@ -50,6 +51,8 @@ pid_t Fork();
 void Close(int fd);
 Sigfunc * Signal(int signo, Sigfunc *func);
 void Dup2(int oldfd,int newfd);
+void Select(int __nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
+
 //错误处理
 void err_sys(const char* fmt, ...);
 

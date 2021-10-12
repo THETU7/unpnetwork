@@ -8,6 +8,7 @@
 */
 
 #include "help.h"
+#include <sys/select.h>
 #include <sys/socket.h>
 
 int Socket(int family, int type, int protocol){
@@ -61,4 +62,10 @@ void Close(int fd){
 	if(close(fd)<0){
 		err_sys("Close error");
 	}
+}
+
+
+void Select(int __nfds, fd_set *restrict __readfds, fd_set *restrict __writefds, fd_set *restrict __exceptfds, struct timeval *restrict __timeout){
+	if(select(__nfds,__readfds,__writefds,__exceptfds,__timeout)<0)
+		err_sys("select error");
 }
