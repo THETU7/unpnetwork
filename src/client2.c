@@ -29,6 +29,7 @@ int main(int argc,char **argv){
 	saddr.sin_family=AF_INET;
 	int fd = Socket(AF_INET,SOCK_STREAM,0);
 	Connect(fd,(SA*)&saddr,sizeof(saddr));
-	str_cil( stdin,fd);
-	
+	str_cil(stdin,fd);
+	Close(fd);
+	return 0;
 }

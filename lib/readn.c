@@ -35,3 +35,14 @@ ssize_t Readn(int fd,void *vptr,size_t n)
 		err_sys("Readn error!");
 	return nread;
 }
+
+ssize_t Read(int fd,void *vptr,size_t n){
+	int nread;
+	if((nread=read(fd,vptr,n))<0){
+		if(errno==EINTR)
+			nread=0;
+		else 
+			err_sys("read error");
+	}
+	return nread;
+}

@@ -28,3 +28,10 @@ void Dup2(int oldfd,int newfd){
 	if(dup2(oldfd, newfd)<0)
 		err_sys("dup2 error");
 }
+
+void* Malloc(size_t size){
+	void *get;
+	if((get=malloc(size))==NULL)
+		err_quit("malloc fail");
+	return get;	
+}

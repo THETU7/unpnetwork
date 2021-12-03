@@ -1,0 +1,2 @@
+add_executable(daytimetcpsrv2 daytimetcpsrv2.c)
+target_link_libraries(daytimetcpsrv2 nethelp)

@@ -60,8 +60,8 @@ void doit2(int fd){
 	char buf[MAXLINE];
 	ssize_t nread;
 again:
-	while((nread=read(fd,buf,sizeof(buf)))>0){
-		Writen(fd,buf,sizeof(buf));
+	while((nread=Readline(fd,buf,MAXLINE))>0){
+		Writen(fd,buf,strlen(buf));
 	}
 
 	if(nread<0&&errno==EINTR){

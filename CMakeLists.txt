@@ -5,3 +5,7 @@ PROJECT(NETWORK)
 
 add_subdirectory(src)
 add_subdirectory(lib)
+add_subdirectory(udpcliserv)
+add_subdirectory(inetd)
+add_subdirectory(unixdomain)
+add_subdirectory(nonblock)
